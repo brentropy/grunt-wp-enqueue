@@ -1,0 +1,14 @@
+{
+  "name": "grunt-wp-enqueue",
+  "version": "0.1.0",
+  "description": "",
+  "main": "tasks/wpenqueue.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brent Burgoyne",
+  "license": "MIT",
+  "dependencies": {
+    "ect": "~0.5.6"
+  }
+}
