@@ -12,7 +12,7 @@ ect      = require 'ect'
 #
 module.exports = (grunt) ->
 
-  grunt.registerMultiTask 'wpenqueue', ->
+  grunt.registerMultiTask 'enqueue', ->
 
     # Get file names
     versionFile = @data.versionFile ? ".enqueue-#{@target}.json"
