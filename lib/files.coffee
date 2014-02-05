@@ -27,7 +27,7 @@ module.exports = (files, versionData) ->
       # Add to enqueue template data
       data.push
         handle: handle file
-        type: if path.extname file == '.css' then 'style' else 'script'
+        type: if path.extname(file) == '.css' then 'style' else 'script'
         file: file
         version: versionData[file].version
         deps: '' # TODO
