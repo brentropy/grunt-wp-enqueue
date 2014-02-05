@@ -6,8 +6,25 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brentburgoyne/grunt-wp-enqueue"
+  },
+  "keywords": [
+    "grunt",
+    "gruntplugin",
+    "wordpress",
+    "enqueue",
+    "css",
+    "stylesheet",
+    "script"
+  ],
   "author": "Brent Burgoyne",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brentburgoyne/grunt-wp-enqueue/issues"
+  },
+  "homepage": "https://github.com/brentburgoyne/grunt-wp-enqueue",
   "dependencies": {
     "ect": "~0.5.6"
   }
