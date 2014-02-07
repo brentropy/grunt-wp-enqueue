@@ -14,9 +14,11 @@ module.exports = (grunt) ->
 
   grunt.registerMultiTask 'enqueue', ->
 
+    @options = @data.options ? {}
+
     # Get file names
-    versionFile = @data.versionFile ? ".enqueue-#{@target}.json"
-    enqueueFile = @data.enqueueFile ? "enqueue-#{@target}.php"
+    versionFile = @options.versionFile ? ".enqueue-#{@target}.json"
+    enqueueFile = @options.enqueueFile ? "enqueue-#{@target}.php"
 
     # Get the versions
     try
@@ -27,7 +29,8 @@ module.exports = (grunt) ->
     # Render the enqueue php file
     enqueueSrc = render 'enqueue.php',
       files: getFiles @files, versionData
-      functionName: @data.functionName ? "enqueue_#{@target}"
+      functionName: @options.functionName ? "enqueue_#{@target}"
+      directory: if @options.parentTheme then 'template' else 'stylesheet'
 
     # Update the version file
     grunt.file.write versionFile, JSON.stringify versionData, null, 2
