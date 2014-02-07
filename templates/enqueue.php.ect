@@ -1,19 +1,22 @@
 <?php
+if (!function_exists('<%= functionName %>')) {
 
-function <%= @functionName %>() {
-  <% for file in @files : %>
-    wp_enqueue_<%= file.type %>(
-      '<%= file.handle %>',
-      get_template_directory_uri().'/<%= file.file %>',
-      array(<%= file.deps %>),
-      '<%= file.version %>',
-      <% if file.type == 'script' and @footer : %>
-        true
-      <% else : %>
-        null
-      <% end %>
-    );
-  <% end %>
+  function <%= @functionName %>() {
+    <% for file in @files : %>
+      wp_enqueue_<%= file.type %>(
+        '<%= file.handle %>',
+        get_template_directory_uri().'/<%= file.file %>',
+        array(<%= file.deps %>),
+        '<%= file.version %>',
+        <% if file.type == 'script' and @footer : %>
+          true
+        <% else : %>
+          null
+        <% end %>
+      );
+    <% end %>
+  }
+
+  add_action('wp_enqueue_scripts', '<%= @functionName %>');
+
 }
-
-add_action('wp_enqueue_scripts', '<%= @functionName %>');
